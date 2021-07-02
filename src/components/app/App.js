@@ -1,10 +1,12 @@
 import './App.css';
-import {BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import {Col, Container, Row} from "reactstrap";
 import Header from "../header/header";
 import {Component} from "react";
 import gotService from "../../services/gotService";
 import RandomChar from "../randomChar/randomChar";
+import BooksPage from "../pages/booksPage";
+import BooksItem from "../pages/booksItem";
 
 export default class App extends Component {
     gotService = new gotService();
@@ -43,6 +45,12 @@ export default class App extends Component {
                                 </button>
                             </Col>
                         </Row>
+                        <Route path='/' exact component={() => <h1 className="title">Welcome to GOT DB</h1>}/>
+                        {/*<Route path='/characters' component={CharacterPage} />*/}
+                        <Route path='/books' component={BooksPage} exact/>
+                        <Route path='/books/:id' render={({match}) => {
+                            const {id} = match.params;
+                            return <BooksItem bookId={id}/>}}/>
                     </Container>
                 </div>
             </Router>
