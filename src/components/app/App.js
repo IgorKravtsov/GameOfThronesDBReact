@@ -7,6 +7,8 @@ import gotService from "../../services/gotService";
 import RandomChar from "../randomChar/randomChar";
 import BooksPage from "../pages/booksPage";
 import BooksItem from "../pages/booksItem";
+import CharacterPage from "../pages/characterPage";
+import HousesPage from "../pages/housesPage";
 
 export default class App extends Component {
     gotService = new gotService();
@@ -46,11 +48,12 @@ export default class App extends Component {
                             </Col>
                         </Row>
                         <Route path='/' exact component={() => <h1 className="title">Welcome to GOT DB</h1>}/>
-                        {/*<Route path='/characters' component={CharacterPage} />*/}
+                        <Route path='/characters' component={CharacterPage} />
                         <Route path='/books' component={BooksPage} exact/>
                         <Route path='/books/:id' render={({match}) => {
                             const {id} = match.params;
                             return <BooksItem bookId={id}/>}}/>
+                        <Route path='/houses' component={HousesPage} />
                     </Container>
                 </div>
             </Router>
