@@ -1,10 +1,17 @@
 import './App.css';
+import {BrowserRouter as Router} from "react-router-dom";
+import {Container} from "reactstrap";
+import Header from "../header/header";
 
 function App() {
   return (
-    <div className="App">
-      Працюе!
-    </div>
+      <Router>
+          <div className='app'>
+              <Container>
+                  <Header />
+              </Container>
+          </div>
+      </Router>
   );
 }
 
