@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import {Col, Container, Row} from "reactstrap";
 import Header from "../header/header";
 import {Component} from "react";
-import gotService from "../../services/gotService";
 import RandomChar from "../randomChar/randomChar";
 import BooksPage from "../pages/booksPage";
 import BooksItem from "../pages/booksItem";
@@ -11,7 +10,6 @@ import CharacterPage from "../pages/characterPage";
 import HousesPage from "../pages/housesPage";
 
 export default class App extends Component {
-    gotService = new gotService();
 
     state = {
         showRandomChar: true,

@@ -14,7 +14,7 @@ export default class RandomChar extends Component {
 
     componentDidMount() {
         this.updateChar();
-        this.timerId = setInterval(this.updateChar, 15000);
+        this.timerId = setInterval(this.updateChar, 5000);
     }
 
     componentWillUnmount(){
@@ -63,7 +63,7 @@ const View = ({char}) => {
     const {name, gender, born, died, culture} = char;
     return (
         <>
-            <h4>Random Character: {name}</h4>
+            <h4>Random Character: {name} (Update in 5 secs)</h4>
             <ul className="list-group list-group-flush">
                 <li className="list-group-item d-flex justify-content-between">
                     <span className="term">Gender </span>
